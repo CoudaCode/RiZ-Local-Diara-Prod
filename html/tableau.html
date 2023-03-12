@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/tableau.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato|Poppins|Montserrat|Roboto|Nunito|">
+
+  <link rel="shortcut icon" href="./image/logoDiara.jpg" type="image/x-icon" />
+  <title>dashbord</title>
+</head>
+<body>
+  
+  
+  
+    <!-- Header -->
+    <header>
+  
+          <div class="logosec">
+              <div class="logo"><img width="100px"  height="100px" src="../image/logo.png" alt=""></div>
+              <i class="fa-solid fa-bars icn menuicn"></i>
+          </div>
+      
+          <div class="searchbar">
+            <input type="text" placeholder="ReCherche">
+            <div class="searchbtn">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </div>
+          </div>
+      
+          <div class="message">
+            <div class="adminUser">
+                  <h3 >Diara Madou</h3>
+                  <h4>Admin</h4>
+            </div>
+            <div class="dp">
+            <h1>D</h1>
+            </div>
+          </div>
+  
+    </header>
+  
+
+
+    <!-- Navigation -->
+    <div class="main-container">
+      <div class="navcontainer">
+        <nav class="nav">
+            <div class="nav-upper-options">
+                  <div class="nav-option option1">
+                    <i class="fa-solid fa-table"></i>
+                    <h3> <a href="/index.html">Tableau</a></h3>
+                  </div>
+        
+                  <div class="option2 nav-option">
+                    <i class="fa-solid fa-user"></i>
+                    <h3> <a href="./html/tableau.html">Tableau</a></h3>
+                  </div>
+        
+                  <div class="nav-option option3">
+                    <i class="fa-solid fa-signal"></i>
+                    <h3> <a href="./html/status.html">Status</a></h3>
+                  </div>
+        
+                  <div class="nav-option option4">
+                    <i class="fa-solid fa-list"></i>
+                    <h3><a href="./html/Bilan.html">Bilan et paiement</a></h3>
+                  </div>
+        
+                
+        
+                  <div class="nav-option option6">
+                    <i class="fa-solid fa-gear"></i>
+                    <h3> <a href="./html/parametre.html">Tableau</a></h3>
+                  </div>
+        
+                  <div class="nav-option logout">
+                    <i class="fas fa-sign-out-alt"></i>
+                    <h3><a href="./login.html">Deconnexion</a></h3>
+                  </div>
+    
+            </div>
+        </nav>
+      </div>
+      
+      <div class="main">
+        <div class="container">
+          <div class="title-content">
+            <div class="thead">
+                <h2>Listes des travaillleurs: <span class="count"></span></h2>
+        
+              <!-- Trigger/Open The Modal -->
+              <button id="addContactModalButton">Ajouer contact</button>
+            </div>
+      
+            <!-- The Modal -->
+            <div id="contactModal" class="modal">
+      
+              <!-- Modal content -->
+              <div class="modal-content">
+                <span class="close">&times;</span>
+                <div class="form-container">
+                  <form class="form" method="post">
+                        <div class="champ">  
+                              <div>
+                                  <label for="email">Email:</label>
+                                  <input class="form-control" required type="email" id="email" name="email">
+                              </div>
+                              <div>
+                                  <label for="name">Nom complet:</label>
+                                  <input class="form-control" required type="text" id="name" name="name">
+                              </div>
+                          </div>
+                          
+                         
+                        <div class="champ"> 
+                              <div>
+                                <label for="telephone">Telephone:</label>
+                                <input class="form-control" required type="number" id="telephone" name="telephone">
+                              </div>
+                              
+                              <div>
+                                <label for="date">Date D'arrive:</label>
+                                <input class="form-control" required type="datetime-local" id="date" name="date">
+                              </div>
+                        </div>
+                        
+                        <div class="champ">
+                          
+                          <div >
+                            <label for="Genre">Sexe:</label>
+                            <select name="Genre" id="Sexe" class="form-control">
+                                  <option value="1">Masculin</option>
+                                  <option value="2">Feminin</option>
+                            </select>
+                            
+                          </div>
+                          <div >
+                            <label for="Genre">Tache:</label>
+                            <select name="Genre" id="tache" class="form-control">
+                                  <option value="1">broyeur</option>
+                                  <option value="2">Chauffeur</option>
+                            </select>
+                            
+                          </div>
+                        </div>
+                        <!-- <div>
+                          <label for="telephone">Tache:</label>
+                          <input class="form-control" required type="text" id="tache" name="tache">  
+                        </div> -->
+                        <div>
+
+                        </div>
+                        
+                        <button type="submit" class="addContactButton">Ajouter </button>
+                  </form>
+                </div>
+              </div>
+            </div>
+            <div class="contacts">
+              <div class="table-container">
+                <table class="table">
+                  <tr>
+                    <th>Nom complet</th>
+                    <th>Email</th>
+                    <th>Telephone</th>
+                    <th>Genre</th>
+                    <th>Date D'arrive</th>
+                    <th>Tache</th>
+                    <th>Actions</th>
+                  </tr>
+                </table>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+    </div>
+  
+   
+  
+
+
+    <script src="../js/tableau.js"></script>
+</body>
+</html>
