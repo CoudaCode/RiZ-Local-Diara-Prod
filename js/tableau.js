@@ -20,6 +20,7 @@ let initialContacts = getContacts() || []
 const countElement = document.querySelector('.count')
 const table = document.querySelector('.table')
 const tblBody = document.createElement('tbody')
+console.log(initialContacts)
 
 // function counter
 function setCount(count) {
@@ -50,6 +51,10 @@ function createTable(){
       element < Object.keys(contacts[0]).length;
       element++
     ) {
+
+      if(element == 7){
+        continue
+      }
       // ajouter les td
       const cell = document.createElement('td')
       const cellText = document.createTextNode(
@@ -61,6 +66,8 @@ function createTable(){
       row.appendChild(cell)
       row.appendChild(buttonCell)
       row.setAttribute('id', contacts[index].telephone)
+
+      console.log( Object.keys(contacts[0]));
     }
     tblBody.appendChild(row)
   }
@@ -117,12 +124,13 @@ addContactButton.onclick = function (event) {
   const telephone = document.getElementById('telephone').value
   const Sexe = document.getElementById('Sexe').options[document.getElementById('Sexe').selectedIndex].innerText;
   const Date = document.getElementById('date').value
+  const time = document.getElementById('temps').value
   const Tache = document.getElementById('tache').options[document.getElementById('tache').selectedIndex].innerText
-  if (!name || !email || !telephone || !Sexe || !Date || !Tache) {
+  if (!name || !email || !telephone || !Sexe || !Date || !Tache || !time) {
     alert('merci de tout remplir')
-    return
+    return 
   }
-  const newContact = { name, email, telephone, Sexe, Date,Tache }
+  const newContact = { name, email, telephone, Sexe, Date,time,Tache, status:'encours'}
   contacts.push(newContact)
   setCount(contacts.length)
   setContacts(contacts)
@@ -134,11 +142,11 @@ addContactButton.onclick = function (event) {
   const cell0Text = document.createTextNode(name)
   cell0.appendChild(cell0Text)
   row.appendChild(cell0)
-
-  let cell1 = row.insertCell(1)
-  const cell1Text = document.createTextNode(email)
-  cell1.appendChild(cell1Text)
-  row.appendChild(cell1)
+  
+    let cell1 = row.insertCell(1)
+    const cell1Text = document.createTextNode(email)
+    cell1.appendChild(cell1Text)
+    row.appendChild(cell1)
 
   let cell2 = row.insertCell(2)
   const cell2Text = document.createTextNode(telephone)
@@ -156,10 +164,15 @@ addContactButton.onclick = function (event) {
   row.appendChild(cell4)
 
   let cell5 = row.insertCell(5)
-  const cell5Text = document.createTextNode(Tache)
+  const cell5Text = document.createTextNode(time)
   cell5.appendChild(cell5Text)
   row.appendChild(cell5)
 
+  let cell6 = row.insertCell(6)
+  const cell6Text = document.createTextNode(Tache)
+  cell6.appendChild(cell6Text)
+  row.appendChild(cell6)
+  
   // creer le button de supression
   let buttonCell = document.createElement('td')
   let deleteButton = document.createElement('button')
@@ -200,6 +213,7 @@ addContactButton.onclick = function (event) {
   document.getElementById('Sexe').value = ''
   document.getElementById('date').value = ''
   document.getElementById('tache').value = ''
+  document.getElementById('temps').value = ''
   modal.style.display = 'none'
 }
 

@@ -208,14 +208,14 @@
     text-decoration: none;
     color: black;
   }
-  .option2 {
+  .option3 {
   /* border-left: 5px solid #010058af;// */
   background-color: var(--Border-color);
   color: white;
   border-radius: 10px;
   cursor: pointer;
   }
-  .option2:hover {
+  .option3:hover {
   /* border-left: 5px solid #010058af; */
   background-color: var(--Border-color);
   }
@@ -430,13 +430,7 @@
       width: 180px;
     }
     }
-    .container {
-      /* width: 960px;
-      padding-right: 15px;
-      padding-left: 15px;
-      margin-right: auto;
-      margin-left: auto; */
-    }
+  
     
     .count {
       color: #04aa6d;
@@ -461,64 +455,7 @@
       border: none;
     }
     
-
-table{
-	
-  margin: 1rem auto;
-  text-align: center;
-  width: 100%;
-  max-width: 100%;
-  border-collapse: collapse;
-  
-  }
-      
-    
-  /* thead{
-  
-  color: bl
-  
-  } */
-    
-  
-  th,td{padding:8px 0}
-  
-  tbody tr:nth-child(even) {
-    
-  background-color: #ddd
-    
-  }
-    
-  @media only screen and (max-width: 800px) {
-      
-  table, 
-  /* thead, 
-  tbody,  */
-  th, 
-  td, 
-  tr{ 
-    
-  display: block
-    
-  }
-    
-  thead tr { 
-  position: absolute;
-  top: -9999px;
-  left: -9999px;
-  }
-   
-   
-   
-  td { 
-    
-  position: relative;
-  white-space: normal;
-  text-align: left
-    
-  }
-  }
-  
-    /* .table {
+    .table {
       border-collapse: collapse;
       width: 100%;
     }
@@ -541,7 +478,7 @@ table{
       color: white;
       text-align: start;
       
-    } */
+    }
     
     .delete-btn {
       background-color: red;
