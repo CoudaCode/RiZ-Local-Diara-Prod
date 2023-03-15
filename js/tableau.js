@@ -1,4 +1,12 @@
 // 
+//ajout de nouvelle options
+
+// const opt1 = document.createElement("option");
+// opt1.value = "3";
+// opt1.textContent = "Changeur";
+
+
+// console.log(document.getElementById('tache').add(opt1))
 
 let menuicn = document.querySelector(".menuicn");
   let nav = document.querySelector(".navcontainer");
@@ -9,8 +17,9 @@ let menuicn = document.querySelector(".menuicn");
   }) 
 
 
-  // recuperer depuis localstorage
-function getContacts() {
+// recuperer depuis localstorage
+
+  function getContacts() {
   return JSON.parse(localStorage.getItem('contacts'))
 }
 
@@ -20,7 +29,7 @@ let initialContacts = getContacts() || []
 const countElement = document.querySelector('.count')
 const table = document.querySelector('.table')
 const tblBody = document.createElement('tbody')
-console.log(initialContacts)
+// console.log(initialContacts)
 
 // function counter
 function setCount(count) {
@@ -67,7 +76,7 @@ function createTable(){
       row.appendChild(buttonCell)
       row.setAttribute('id', contacts[index].telephone)
 
-      console.log( Object.keys(contacts[0]));
+      // console.log( Object.keys(contacts[0]));
     }
     tblBody.appendChild(row)
   }
@@ -130,7 +139,8 @@ addContactButton.onclick = function (event) {
     alert('merci de tout remplir')
     return 
   }
-  const newContact = { name, email, telephone, Sexe, Date,time,Tache, status:'encours'}
+
+  const newContact = { name, email, telephone, Sexe, Date,time,Tache}
   contacts.push(newContact)
   setCount(contacts.length)
   setContacts(contacts)

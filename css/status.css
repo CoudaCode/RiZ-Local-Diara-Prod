@@ -321,6 +321,7 @@
     .nav {
       width: 100%;
       position: absolute;
+      z-index: 1;
     }
     .navclose {
       left: 00px;
@@ -440,7 +441,15 @@
     }
     }
   
-    
+    .delete-btn {
+      background-color: #14C38E;
+      color: white;
+      border-radius: 10px;
+      font-weight: bold;
+      border: 1px solid #14C38E;
+      padding: 5px 15px;
+      cursor: pointer;
+    }
 
 /* TABLEAU STATUS */
 

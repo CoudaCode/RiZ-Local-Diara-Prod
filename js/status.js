@@ -20,7 +20,7 @@ function createTable(){
     // creer le button de supression
     let buttonCell = document.createElement('td')
     let deleteButton = document.createElement('button')
-    let buttonText = document.createTextNode('Supprimer')
+    let buttonText = document.createTextNode('En cours')
     deleteButton.setAttribute('class', 'delete-btn')
     deleteButton.appendChild(buttonText)
     
@@ -42,10 +42,11 @@ function createTable(){
       )
       
       deleteButton.setAttribute('contactPhone', contacts[index].telephone)
-      // console.log(Object.values(contacts[0])[1]);
-
+      deleteButton.setAttribute('contactPhone', contacts[index].telephone)
+      buttonCell.appendChild(deleteButton)
       cell.appendChild(cellText)
       row.appendChild(cell)
+      row.appendChild(buttonCell)
       row.setAttribute('id', contacts[index].telephone)
 
       // console.log( Object.keys(contacts[0]));
@@ -57,4 +58,12 @@ function createTable(){
 }
 
 createTable()
+
+let menuicn = document.querySelector(".menuicn");
+  let nav = document.querySelector(".navcontainer");
+ 
+  menuicn.addEventListener("click",()=>
+  {
+      nav.classList.toggle("navclose");
+  }) 
 
