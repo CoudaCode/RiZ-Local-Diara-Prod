@@ -83,7 +83,9 @@ input {
   border: none;
   background-color: inherit;
 }
-
+input:focus{
+  outline: 2px solid #4ECB71;
+}
 .username-input,
 .password-input {
   width: 90%;

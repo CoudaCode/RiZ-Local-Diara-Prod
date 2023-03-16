@@ -87,7 +87,7 @@
         <div class="container">
             <div class="title-content">
                <div class="thead">
-                  <h2>Ajouter des taches: <span class="count"></span></h2>
+                  <h2>Ajouter des taches(Le gain par jour): <span class="count"></span></h2>
           
                    <!-- Trigger/Open The Modal -->
             <button id="addContactModalButton">Ajouer contact</button>
@@ -106,10 +106,11 @@
                                     <label for="tache">Nom de la tache</label>
                                     <input class="form-control" required type="text" id="tache" name="tache">
                                 </div>
-                                <!-- <div>
-                                    <label for="name">Nom complet:</label>
-                                    <input class="form-control" required type="text" id="name" name="name">
-                                </div> -->
+                                <div>
+                                  <label for="Montant">Montant de la tache</label>
+                                  <input class="form-control" required type="number" id="Montant" name="Montant">
+                              </div>
+                               
                             </div>
                             
                           
@@ -158,11 +159,13 @@
               <div class="table-container">
               
                 <table class="table">
+                 <thead>
                   <tr>
                     <th>Taches</th>
                     <th>Montant</th>
                     <th>Actions</th>
                   </tr>
+                 </thead>
                 </table>
               </div>
             </div> 

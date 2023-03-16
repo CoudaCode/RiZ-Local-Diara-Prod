@@ -1,12 +1,7 @@
 // 
 //ajout de nouvelle options
 
-// const opt1 = document.createElement("option");
-// opt1.value = "3";
-// opt1.textContent = "Changeur";
 
-
-// console.log(document.getElementById('tache').add(opt1))
 
 let menuicn = document.querySelector(".menuicn");
   let nav = document.querySelector(".navcontainer");
@@ -22,6 +17,62 @@ let menuicn = document.querySelector(".menuicn");
   function getContacts() {
   return JSON.parse(localStorage.getItem('contacts'))
 }
+
+  function getTodolist() {
+  return JSON.parse(localStorage.getItem('todolist'))
+}
+
+
+// const opt1 = document.createElement("option");
+
+// opt1.value = "3";
+
+// opt1.textContent = "Changeur";
+
+
+// console.log()
+
+
+
+console.log(Object.values(getTodolist()[0]))
+
+for (let tab = 0; tab < getTodolist().length; tab++) {
+
+  for (let tel = 0; tel < Object.keys(getTodolist()[tab]).length - 1 ; tel++) {
+    const optTAche = document.createElement("option");
+    const optMontant = document.createElement("option");
+    optTAche.value = tel;
+    optMontant.value = tel;
+    
+    optTAche.textContent = Object.values(getTodolist()[tab])[0];  
+    optMontant.textContent = Object.values(getTodolist()[tab])[1];  
+  
+    // console.log(opt)
+    // console.log('test',Object.values(getTodolist()[2])[1])
+
+    document.getElementById('Tache').add(optTAche)
+    document.getElementById('Gain').add(optMontant)
+
+}
+  
+}
+
+
+// Changement automatique
+
+changeGain = document.getElementById('Gain')
+
+changeTAche = document.getElementById('Tache')
+
+changeTAche.addEventListener('change', ()=>{
+     console.log(changeGain.options[changeTAche.selectedIndex])
+})
+
+
+
+
+
+
 
 // um tableau de contatactes
 let initialContacts = getContacts() || []
@@ -61,9 +112,7 @@ function createTable(){
       element++
     ) {
 
-      if(element == 7){
-        continue
-      }
+      
       // ajouter les td
       const cell = document.createElement('td')
       const cellText = document.createTextNode(
@@ -137,8 +186,8 @@ addContactButton.onclick = function (event) {
   const Sexe = document.getElementById('Sexe').options[document.getElementById('Sexe').selectedIndex].innerText;
   const Date = document.getElementById('date').value
   const time = document.getElementById('temps').value
-  const Tache = document.getElementById('tache').options[document.getElementById('tache').selectedIndex].innerText
-  const gain = document.getElementById('gain').options[document.getElementById('gain').selectedIndex].innerText
+  const Tache = document.getElementById('Tache').options[document.getElementById('Tache').selectedIndex].innerText
+  const gain = document.getElementById('Gain').options[document.getElementById('Gain').selectedIndex].innerText
   
   if (!name || !email || !telephone || !Sexe || !Date || !Tache || !time || !gain) {
     alert('merci de tout remplir')
@@ -234,10 +283,14 @@ addContactButton.onclick = function (event) {
   document.getElementById('telephone').value = ''
   document.getElementById('Sexe').value = ''
   document.getElementById('date').value = ''
-  document.getElementById('tache').value = ''
-  document.getElementById('gain').value = ''
+  document.getElementById('Tache').value = ''
+  document.getElementById('Gain').value = ''
   document.getElementById('temps').value = ''
   modal.style.display = 'none'
 }
 
 setCount(contacts.length)
+
+
+
+
