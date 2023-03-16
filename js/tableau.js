@@ -69,6 +69,8 @@ function createTable(){
       const cellText = document.createTextNode(
         Object.values(contacts[index])[element]
       )
+
+
       deleteButton.setAttribute('contactPhone', contacts[index].telephone)
       buttonCell.appendChild(deleteButton)
       cell.appendChild(cellText)
@@ -91,6 +93,7 @@ let deleteButton = document.querySelectorAll('.delete-btn')
 deleteButton.forEach(function (button) {
   button.addEventListener('click', function () {
     const telephone = this.getAttribute('contactPhone')
+    console.log(telephone)
 
     let row = document.getElementById(telephone)
     row.parentNode.removeChild(row)
@@ -135,12 +138,14 @@ addContactButton.onclick = function (event) {
   const Date = document.getElementById('date').value
   const time = document.getElementById('temps').value
   const Tache = document.getElementById('tache').options[document.getElementById('tache').selectedIndex].innerText
-  if (!name || !email || !telephone || !Sexe || !Date || !Tache || !time) {
+  const gain = document.getElementById('gain').options[document.getElementById('gain').selectedIndex].innerText
+  
+  if (!name || !email || !telephone || !Sexe || !Date || !Tache || !time || !gain) {
     alert('merci de tout remplir')
     return 
   }
 
-  const newContact = { name, email, telephone, Sexe, Date,time,Tache}
+  const newContact = { name, email, telephone, Sexe, Date,time,Tache,gain}
   contacts.push(newContact)
   setCount(contacts.length)
   setContacts(contacts)
@@ -183,6 +188,12 @@ addContactButton.onclick = function (event) {
   cell6.appendChild(cell6Text)
   row.appendChild(cell6)
   
+
+  let cell7 = row.insertCell(7)
+  const cell7Text = document.createTextNode(gain)
+  cell7.appendChild(cell7Text)
+  row.appendChild(cell7)
+  
   // creer le button de supression
   let buttonCell = document.createElement('td')
   let deleteButton = document.createElement('button')
@@ -202,6 +213,7 @@ addContactButton.onclick = function (event) {
     let filteredContacts = contacts.filter(
       (contact) => contact.telephone !== telephone
     )
+   
     contacts = filteredContacts
     setCount(contacts.length)
     setContacts(contacts)
@@ -223,6 +235,7 @@ addContactButton.onclick = function (event) {
   document.getElementById('Sexe').value = ''
   document.getElementById('date').value = ''
   document.getElementById('tache').value = ''
+  document.getElementById('gain').value = ''
   document.getElementById('temps').value = ''
   modal.style.display = 'none'
 }

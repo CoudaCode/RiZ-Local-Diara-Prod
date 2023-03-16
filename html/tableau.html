@@ -103,63 +103,66 @@
                 <span class="close">&times;</span>
                 <div class="form-container">
                   <form class="form" method="post">
-                        <div class="champ">  
-                              <div>
-                                  <label for="email">Email:</label>
-                                  <input class="form-control" required type="email" id="email" name="email">
-                              </div>
-                              <div>
-                                  <label for="name">Nom complet:</label>
-                                  <input class="form-control" required type="text" id="name" name="name">
-                              </div>
-                          </div>
-                          
-                         
-                        <div class="champ"> 
-                              <div>
-                                <label for="telephone">Telephone:</label>
-                                <input class="form-control" required type="number" id="telephone" name="telephone">
-                              </div>
-                              
-                              <div>
-                                <label for="date">Date D'arrive:</label>
-                                <input class="form-control" required type="date" id="date" name="date">
-                              </div>
-                        </div>
-                        
-                        <div class="champ">
-                          
-                          <div >
-                            <label for="Genre">Sexe:</label>
-                            <select name="Genre" id="Sexe" class="form-control">
-                                   <option value="1">Masculin</option>
-                                  <option value="2">Feminin</option>
-                            </select>
-                            
-                          </div>
-                          <div >
-                            <label for="Genre">Tache:</label>
-                            <div name="tache" id="Tache" class="form-control">
-                              <input type="checkbox" name="tache1" id="tache1">
-                              <label for="tache1">Tache1</label><br>
-                              <input type="checkbox" name="tache2" id="tache2">
-                              <label for="tache2">Tache2</label><br>
-                              <input type="checkbox" name="tache3" id="tache3">
-                              <label for="tache2">Tache3</label>
-
-                            </div>
-                            
-                          </div>
-                        </div>
-                       
-                        <div class="champ">
+                    <div class="champ">  
                           <div>
-                            <label for="temps">heure D'arrive:</label>
-                            <input class="form-control" type="time" required min="07:00" max="17:00" id="temps" name="temps">
+                              <label for="email">Email:</label>
+                              <input class="form-control" required type="email" id="email" name="email">
                           </div>
-                        </div>
+                          <div>
+                              <label for="name">Nom complet:</label>
+                              <input class="form-control" required type="text" id="name" name="name">
+                          </div>
+                      </div>
+                      
+                      
+                    <div class="champ"> 
+                          <div>
+                            <label for="telephone">Telephone:</label>
+                            <input class="form-control" required type="number" id="telephone" name="telephone">
+                          </div>
+                          
+                          <div>
+                            <label for="date">Date D'arrive:</label>
+                            <input class="form-control" required type="date" id="date" name="date">
+                          </div>
+                    </div>
+                    
+                    <div class="champ">
+                      
+                      <div >
+                        <label for="Genre">Sexe:</label>
+                        <select name="Genre" id="Sexe" class="form-control">
+                                <option value="1">Masculin</option>
+                              <option value="2">Feminin</option>
+                        </select>
                         
-                        <button type="submit" class="addContactButton">Ajouter </button>
+                      </div>
+                      <div >
+                        <label for="Genre">Tache:</label>
+                        <select name="tache" id="tache" class="form-control">
+                          <option value="1">Tache1<option> 
+                          <option value="2">Tache2<option> 
+                        </select>
+                        
+                      </div>
+                    </div>
+                    
+                    <div class="champ">
+                      <div>
+                        <label for="temps">heure D'arrive:</label>
+                        <input class="form-control" type="time" required min="07:00" max="17:00" id="temps" name="temps">
+                      </div>
+                      <div >
+                        <label for="Genre">Gain</label>
+                        <select name="tache" id="gain" class="form-control">
+                          <option value="1">3000<option> 
+                          <option value="2">3000<option> 
+                        </select>
+                        
+                      </div>
+                    </div>
+                    
+                    <button type="submit" class="addContactButton">Ajouter </button>
                   </form>
                 </div>
               </div>
@@ -176,6 +179,7 @@
                           <th>Date D'arrive</th>
                           <th>heure D'arrive</th>
                           <th>Tache</th>
+                          <th>Gain</th>
                           <th>Action</th>
                       </thead>
                   </tr>
