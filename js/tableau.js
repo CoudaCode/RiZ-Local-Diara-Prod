@@ -37,43 +37,47 @@ let menuicn = document.querySelector(".menuicn");
 console.log(Object.values(getTodolist()[0]))
 
 for (let tab = 0; tab < getTodolist().length; tab++) {
-
-  for (let tel = 0; tel < Object.keys(getTodolist()[tab]).length - 1 ; tel++) {
-    const optTAche = document.createElement("option");
-    const optMontant = document.createElement("option");
-    optTAche.value = tel;
-    optMontant.value = tel;
-    
-    optTAche.textContent = Object.values(getTodolist()[tab])[0];  
-    optMontant.textContent = Object.values(getTodolist()[tab])[1];  
   
+  for (let tel = 0; tel < Object.keys(getTodolist()[tab]).length - 1 ; tel++) {
+    // const optMontant = document.getElementById("Gain");
+    const optTAche = document.createElement("option");
+    optTAche.value = tel+1;
+    // optMontant.value = Object.values(getTodolist()[tab])[1];
+    // console.log(optMontant.value)
+    // console.log(optMontant);
+    optTAche.textContent = Object.values(getTodolist()[tab])[0];  
+    
+    document.getElementById('Tache').add(optTAche)
+    
+    // optMontant.textContent = Object.values(getTodolist()[tab])[1];  
     // console.log(opt)
     // console.log('test',Object.values(getTodolist()[2])[1])
-
-    document.getElementById('Tache').add(optTAche)
-    document.getElementById('Gain').add(optMontant)
-
-}
+    // document.getElementById('Gain').add(optMontant)
+    
+    console.log(optTAche.value)
+  }
   
 }
-
 
 // Changement automatique
 
 changeGain = document.getElementById('Gain')
 
 changeTAche = document.getElementById('Tache')
+let TabMtn = []
 
-changeTAche.addEventListener('change', ()=>{
-     console.log(changeGain.options[changeTAche.selectedIndex])
+
+for (let alt = 0; alt < getTodolist().length; alt++) {
+  
+  for (let tel = 0; tel < Object.keys(getTodolist()[alt]).length - 1 ; tel++) {
+    TabMtn.push(parseInt(Object.values(getTodolist()[alt])[1]))
+  }
+}
+
+changeTAche.addEventListener('change', function(){
+    console.log(changeTAche.selectedIndex);
+    changeGain.value = TabMtn[changeTAche.selectedIndex]
 })
-
-
-
-
-
-
-
 // um tableau de contatactes
 let initialContacts = getContacts() || []
 
@@ -81,7 +85,7 @@ const countElement = document.querySelector('.count')
 const table = document.querySelector('.table')
 const tblBody = document.createElement('tbody')
 // console.log(initialContacts)
-
+ 
 // function counter
 function setCount(count) {
   countElement.innerHTML = count
@@ -187,8 +191,8 @@ addContactButton.onclick = function (event) {
   const Date = document.getElementById('date').value
   const time = document.getElementById('temps').value
   const Tache = document.getElementById('Tache').options[document.getElementById('Tache').selectedIndex].innerText
-  const gain = document.getElementById('Gain').options[document.getElementById('Gain').selectedIndex].innerText
-  
+  // const gain = document.getElementById('Gain').options[document.getElementById('Gain').selectedIndex].innerText
+  const gain = document.getElementById('Gain').value
   if (!name || !email || !telephone || !Sexe || !Date || !Tache || !time || !gain) {
     alert('merci de tout remplir')
     return 
