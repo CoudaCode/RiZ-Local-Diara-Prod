@@ -35,10 +35,10 @@ function createTable() {
       // ajouter les td
       const cell = document.createElement("td");
 
-      const cellText = document.createTextNode(
-        Object.values(contacts[index])[element]
+      const cellText = document.createTextNode( Object.values(contacts[index])[element]
       );
-
+      console.log(cellText);
+      console.log(cell);
       deleteButton.setAttribute("contactPhone", contacts[index].telephone);
       deleteButton.setAttribute("contactPhone", contacts[index].telephone);
       buttonCell.appendChild(deleteButton);
