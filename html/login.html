@@ -15,22 +15,28 @@
   </head>
   <body>
     <div class="container">
-        <div class="content">
+        <form class="content">
               <div class="img">
                   <img src="../image/logoDiara.jpg" width="100%" height="100%" alt="">
               </div>
               <div class="connexion">
                     <div class="logo"><img width="100%" height="100%" src="../image/logo.png" alt=""></div>
                     <div class="login-form">
+                          
+                          <h4>Name</h4>
+                          <div class="username-input">
+                            <input type="text" placeholder="couda" id="name">
+                          </div>
+
                           <h4>Email</h4>
                           <div class="username-input">
                             <i class="fas fa-user"></i>
-                            <input type="email" placeholder="couda.dm@gmail.com">
+                            <input type="email" placeholder="couda.dm@gmail.com" id="email">
                           </div>
                           <h4>Mot de Passe</h4>
                           <div class="password-input">
                             <i class="fas fa-lock"></i>
-                            <input type="password" placeholder="***********" >
+                            <input type="password" id="password" placeholder="***********" >
                           </div>
                         
                     </div>
@@ -40,7 +46,7 @@
                     </div>
               </div>
               
-        </div>
+        </form>
     </div>
 <!--  -->
     <script src="../js/login.js"></script>

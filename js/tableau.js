@@ -210,11 +210,11 @@ addContactButton.onclick = function (event) {
   const cell0Text = document.createTextNode(name)
   cell0.appendChild(cell0Text)
   row.appendChild(cell0)
-  
-    let cell1 = row.insertCell(1)
-    const cell1Text = document.createTextNode(email)
-    cell1.appendChild(cell1Text)
-    row.appendChild(cell1)
+
+  let cell1 = row.insertCell(1)
+  const cell1Text = document.createTextNode(email)
+  cell1.appendChild(cell1Text)
+  row.appendChild(cell1)
 
   let cell2 = row.insertCell(2)
   const cell2Text = document.createTextNode(telephone)
@@ -298,3 +298,16 @@ setCount(contacts.length)
 
 
 
+nameAdmin = document.querySelector('.adminUser h3');
+session = JSON.parse(localStorage.getItem('AdminConnecte'))
+
+nameAdmin.textContent = session.Name
+
+logout = document.querySelector('.logout a')
+
+console.log(logout);
+
+logout.addEventListener('click', ()=>{
+      localStorage.removeItem('AdminConnecte')
+      console.log("c'est clear")
+})
