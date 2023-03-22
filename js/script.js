@@ -2,43 +2,54 @@ mail = document.querySelector("#email");
 pass = document.querySelector("#password");
 Name = document.querySelector("#name");
 
+superUser = {
+  mail: "couda.dm@gmail.com",
+  mdp: "couda123@",
+  status: "SuperAdmin",
+  name: "Diara Madou"
+};
+
+localStorage.setItem("SuperUser", JSON.stringify(superUser));
 
 form = document.querySelector(".content");
 
 console.log(mail, pass, form);
 
-function AdminConnect() {
-  return JSON.parse(localStorage.getItem("admin"));
+
+
+function AdminConnect(){
+  return JSON.parse(localStorage.getItem("Admin"));
 }
 
-function setContacts(contacts) {
-  localStorage.setItem("admin", JSON.stringify(contacts));
-}
 
 let addAdmin = AdminConnect() || [];
 
-console.log(AdminConnect());
+console.log(addAdmin)
 
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  const admin = {
-     mail:mail.value,
-     pass: pass.value,
-     Name:Name.value
-  }
-  // addAdmin.push(admin)
-  // setContacts(addAdmin)
-  addAdmin.forEach((element) => {
-    if (
-      mail.value === element.mail &&
-      pass.value === element.pass
-    ){
-      // alert("Mdp ou Email est incorrect");
-      localStorage.setItem("AdminConnecte", JSON.stringify(admin));
+  // console.log(mail.value)
+  // console.log(addAdmin)
+  if (mail.value == superUser.mail && pass.value == superUser.mdp){
+   
+    window.location.href = "http://127.0.0.1:5500/html/superAdmin.html";
+    localStorage.setItem("SessionConnect", JSON.stringify(superUser));
+  }else{
+    
+  } 
+  addAdmin.forEach(element => {
+    
+    if(mail.value == element.email && pass.value == element.password){
       
-      window.location.href='http://127.0.0.1:5500/index.html'
-    } 
-  });
- 
+      window.location.href = "http://127.0.0.1:5500/html/admin.html";
+      
+      localStorage.setItem("SessionConnect", JSON.stringify(element));
+
+    }
+  })
+
+
+  
+
 });

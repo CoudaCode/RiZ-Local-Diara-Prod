@@ -3,7 +3,7 @@ table = document.querySelector(".table");
 let initialContacts = getContacts() || [];
 
 function getContacts() {
-  return JSON.parse(localStorage.getItem("contacts"));
+  return JSON.parse(localStorage.getItem("travailleurs"));
 }
 
 // function setContacts(contacts) {
@@ -99,16 +99,18 @@ deletetbn.forEach((elem) => {
 
 
 nameAdmin = document.querySelector('.adminUser h3');
-session = JSON.parse(localStorage.getItem('AdminConnecte'))
+DemoAdmin = document.querySelector('.adminUser h4');
+session = JSON.parse(localStorage.getItem('SessionConnect'))
 
 nameAdmin.textContent = session.Name
-
+Adp = document.querySelector('.dp h1')
+Adp.textContent = session.name[0].toUpperCase()
 
 logout = document.querySelector('.logout a')
 
 console.log(logout);
 
 logout.addEventListener('click', ()=>{
-      localStorage.removeItem('AdminConnecte')
+      localStorage.removeItem('SessionConnect')
       console.log("c'est clear")
 })

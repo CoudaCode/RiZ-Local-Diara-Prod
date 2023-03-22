@@ -14,8 +14,8 @@ let menuicn = document.querySelector(".menuicn");
 
 // recuperer depuis localstorage
 
-  function getContacts() {
-  return JSON.parse(localStorage.getItem('contacts'))
+  function getTravailleurs() {
+  return JSON.parse(localStorage.getItem('travailleurs'))
 }
 
   function getTodolist() {
@@ -79,7 +79,7 @@ changeTAche.addEventListener('change', function(){
     changeGain.value = TabMtn[changeTAche.selectedIndex]
 })
 // um tableau de contatactes
-let initialContacts = getContacts() || []
+let initialContacts = getTravailleurs() || []
 
 const countElement = document.querySelector('.count')
 const table = document.querySelector('.table')
@@ -93,12 +93,13 @@ function setCount(count) {
 
 // ajouter dans localstorage
 function setContacts(contacts) {
-  localStorage.setItem('contacts', JSON.stringify(contacts))
+  localStorage.setItem('travailleurs', JSON.stringify(contacts))
 }
 
 setContacts(initialContacts)
-let contacts = getContacts()
+let contacts = getTravailleurs()
 
+console.log(contacts)
 // remplir la table
 function createTable(){
   for (let index = 0; index < contacts.length; index++) {
@@ -139,7 +140,11 @@ function createTable(){
 
 }
 
+
+
 createTable()
+
+
 
 let deleteButton = document.querySelectorAll('.delete-btn')
 
@@ -299,15 +304,18 @@ setCount(contacts.length)
 
 
 nameAdmin = document.querySelector('.adminUser h3');
-session = JSON.parse(localStorage.getItem('AdminConnecte'))
+session = JSON.parse(localStorage.getItem('SessionConnect'))
 
-nameAdmin.textContent = session.Name
-
+nameAdmin.textContent = session.name
+Adp = document.querySelector('.dp h1')
+Adp.textContent = session.name[0].toUpperCase()
 logout = document.querySelector('.logout a')
 
 console.log(logout);
 
+
+console.log(session)
 logout.addEventListener('click', ()=>{
-      localStorage.removeItem('AdminConnecte')
+      localStorage.removeItem('SessionConnect')
       console.log("c'est clear")
 })

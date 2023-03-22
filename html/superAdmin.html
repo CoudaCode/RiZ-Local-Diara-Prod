@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../css/tableau.css">
+  <link rel="stylesheet" href="../css/superAdmin.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato|Poppins|Montserrat|Roboto|Nunito|">
 
@@ -36,7 +36,7 @@
                   <h4>Admin</h4>
             </div>
             <div class="dp">
-            <h1>D</h1>
+              <h1>D</h1>
             </div>
           </div>
   
@@ -49,33 +49,33 @@
       <div class="navcontainer">
         <nav class="nav">
             <div class="nav-upper-options">
-                  <div class="nav-option option1">
+                  <!-- <div class="nav-option option1">
                     <i class="fa-solid fa-table"></i>
                     <h3> <a href="../html/admin.html">Tableau</a></h3>
                   </div>
-        
+         -->
                   <div class="option2 nav-option">
                     <i class="fa-solid fa-user"></i>
-                    <h3> <a href="../html/tableau.html">Travailleurs</a></h3>
+                    <h3> <a href="../html/superAdmin.html">Administrateurs</a></h3>
                   </div>
         
                   <div class="nav-option option3">
                     <i class="fa-solid fa-signal"></i>
-                    <h3> <a href="../html/status.html">Status</a></h3>
+                    <h3> <a href="">Status</a></h3>
                   </div>
-        
+<!--         
                   <div class="nav-option option4">
                     <i class="fa-solid fa-list"></i>
                     <h3><a href="../html/Bilan.html">Bilan et paiement</a></h3>
                   </div>
-        
+         -->
                 
-        
+<!--         
                   <div class="nav-option option6">
                     <i class="fa-solid fa-gear"></i>
                     <h3> <a href="../html/parametre.html">Paramètres</a></h3>
                   </div>
-        
+         -->
                   <div class="nav-option logout">
                     <i class="fas fa-sign-out-alt"></i>
                     <h3><a href="../index.html">Deconnexion</a></h3>
@@ -89,7 +89,7 @@
         <div class="container">
           <div class="title-content">
             <div class="thead">
-                <h2>Listes des travaillleurs: <span class="count"></span></h2>
+                <h2>Administrateurs: <span class="count"></span></h2>
         
               <!-- Trigger/Open The Modal -->
               <button id="addContactModalButton">Ajouer contact</button>
@@ -117,53 +117,13 @@
                       
                     <div class="champ"> 
                           <div>
-                            <label for="telephone">Telephone:</label>
-                            <input class="form-control" required type="number" id="telephone" name="telephone">
-                          </div>
-                          
-                          <div>
-                            <label for="date">Date D'arrive:</label>
-                            <input class="form-control" required type="date" id="date" name="date">
+                            <label for="telephone">Mot de passe:</label>
+                            <input class="form-control" required type="password" id="password" name="password">
                           </div>
                     </div>
                     
-                    <div class="champ">
-                      
-                      <div >
-                        <label for="Genre">Sexe:</label>
-                        <select name="Genre" id="Sexe" class="form-control">
-                                <option value="1">Masculin</option>
-                                <option value="2">Feminin</option>
-                        </select>
-                        
-                      </div>
-                      <div >
-                       
-
-                        <label for="Gain">Gain</label>
-                        <input name="Gain" id="Gain" class="form-control" type="text" placeholder="10000" disabled>
-                               
-                      </div>
-                    </div>
-                    
-                    <div class="champ">
-                      <div>
-                        <label for="temps">heure D'arrive:</label>
-                        <input class="form-control" type="time" required min="07:00" max="17:00" id="temps" name="temps">
-                      </div>
-                      <div >
-                       
-                        
-                        <label for="Tache">Tache:</label>
-                        <select name="Tache" id="Tache" class="form-control">
-                         
-                           <option value="2">Semeur</option>
-                       </select>
-                        
-                      </div>
-                    </div>
-                    
-                    <button type="submit" class="addContactButton">Ajouter </button>
+                  
+                    <button type="submit" class="addContactButton">Ajouter</button>
                   </form>
                 </div>
               </div>
@@ -175,13 +135,9 @@
                       <thead>
                           <th>Nom complet</th>
                           <th>Email</th>
-                          <th>Telephone</th>
-                          <th>Genre</th>
-                          <th>Date D'arrive</th>
-                          <th>heure D'arrive</th>
-                          <th>Tache</th>
-                          <th>Gain</th>
-                          <th>Action</th>
+                          <th>Mot de Passe</th>
+                          <th>Delete</th>
+
                       </thead>
                   </tr>
                 </table>
@@ -196,6 +152,6 @@
   
 
 
-    <script src="../js/tableau.js"></script>
+    <script src="../js/superAdmin.js"></script>
 </body>
 </html>

@@ -10,7 +10,7 @@ let menuicn = document.querySelector(".menuicn");
   h2 = document.querySelector('.topic-heading')
 
   function getContacts() {
-    return JSON.parse(localStorage.getItem('contacts'))
+    return JSON.parse(localStorage.getItem('travailleurs'))
   }
   h2.textContent = getContacts().length;
   console.log(getContacts().length)
@@ -20,19 +20,22 @@ let menuicn = document.querySelector(".menuicn");
 
 
 nameAdmin = document.querySelector('.adminUser h3');
-session = JSON.parse(localStorage.getItem('AdminConnecte'))
+session = JSON.parse(localStorage.getItem('SessionConnect'))
 
-nameAdmin.textContent = session.Name
+console.log(session)
+nameAdmin.textContent = session.name
 
   logout = document.querySelector('.logout a')
 
-  console.log(logout);
+  console.log(nameAdmin);
   
   logout.addEventListener('click', ()=>{
-        localStorage.removeItem('AdminConnecte')
+        localStorage.removeItem('SessionConnect')
         console.log("c'est clear")
   })
   // Radio Plusieurs
 
 
 
+  Adp = document.querySelector('.dp h1')
+  Adp.textContent = session.name[0].toUpperCase()
