@@ -1,38 +1,44 @@
-let menuicn = document.querySelector(".menuicn");
-  let nav = document.querySelector(".navcontainer");
- 
-  menuicn.addEventListener("click",()=>
-  {
-      nav.classList.toggle("navclose");
-  })
+mail = document.querySelector("#email");
+pass = document.querySelector("#password");
+Name = document.querySelector("#name");
 
 
-  h2 = document.querySelector('.topic-heading')
+form = document.querySelector(".content");
 
-  function getContacts() {
-    return JSON.parse(localStorage.getItem('contacts'))
+console.log(mail, pass, form);
+
+function AdminConnect() {
+  return JSON.parse(localStorage.getItem("admin"));
+}
+
+function setContacts(contacts) {
+  localStorage.setItem("admin", JSON.stringify(contacts));
+}
+
+let addAdmin = AdminConnect() || [];
+
+console.log(AdminConnect());
+
+form.addEventListener("submit", (e) => {
+  e.preventDefault();
+
+  const admin = {
+     mail:mail.value,
+     pass: pass.value,
+     Name:Name.value
   }
-  h2.textContent = getContacts().length;
-  console.log(getContacts().length)
-
-
-
-
-
-nameAdmin = document.querySelector('.adminUser h3');
-session = JSON.parse(localStorage.getItem('AdminConnecte'))
-
-nameAdmin.textContent = session.Name
-
-  logout = document.querySelector('.logout a')
-
-  console.log(logout);
-  
-  logout.addEventListener('click', ()=>{
-        localStorage.removeItem('AdminConnecte')
-        console.log("c'est clear")
-  })
-  // Radio Plusieurs
-
-
-
+  // addAdmin.push(admin)
+  // setContacts(addAdmin)
+  addAdmin.forEach((element) => {
+    if (
+      mail.value === element.mail &&
+      pass.value === element.pass
+    ){
+      // alert("Mdp ou Email est incorrect");
+      localStorage.setItem("AdminConnecte", JSON.stringify(admin));
+      
+      window.location.href='http://127.0.0.1:5500/index.html'
+    } 
+  });
+ 
+});

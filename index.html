@@ -1,286 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato|Poppins|Montserrat|Roboto|Nunito|">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.2/css/all.css" integrity="sha384-vSIIfh2YWi9wW0r9iZe7RJPrKwp6bG+s9QZMoITbCckVJqGCCRhc+ccxNcdpHuYu" crossorigin="anonymous">
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Lato|Poppins|Montserrat|Roboto|Nunito|"
+    />
+    <link rel="shortcut icon" href="../image/logoDiara.jpg" type="image/x-icon" />
+    <title>Connexion</title>
+  </head>
+  <body>
+    <div class="container">
+        <form class="content">
+              <div class="img">
+                  <img src="../image/logoDiara.jpg" width="100%" height="100%" alt="">
+              </div>
+              <div class="connexion">
+                    <div class="logo"><img width="100%" height="100%" src="../image/logo.png" alt=""></div>
+                    <div class="login-form">
+                          
+                          <h4>Name</h4>
+                          <div class="username-input">
+                            <input type="text" placeholder="couda" id="name">
+                          </div>
 
-  <link rel="shortcut icon" href="image/logoDiara.jpg" type="image/x-icon" />
-  <title>Admin</title>
-</head>
-<body>
-  
-    <!-- Header -->
-    <header>
-  
-          <div class="logosec">
-              <div class="logo"><img width="100px"  height="100px" src="image/logo.png" alt=""></div>
-              <i class="fa-solid fa-bars icn menuicn"></i>
-          </div>
-      
-          <div class="cherchebar">
-            <input type="text" placeholder="ReCherche">
-            <div class="cherchebtn">
-              <i class="fa-solid fa-magnifying-glass"></i>
-            </div>
-          </div>
-      
-          <div class="message">
-            <div class="adminUser">
-                  <h3>Diara Madou</h3>
-                  <h4>Admin</h4>
-            </div>
-            <div class="dp">
-            <h1>D</h1>
-            </div>
-          </div>
-  
-    </header>
-  
-
-
-    <!------------------ Navigation --------------->
-    <div class="main-container">
-      <div class="navcontainer">
-        <nav class="nav">
-          <div class="nav-upper-options">
-            <div class="nav-option option1">
-              <i class="fa-solid fa-table"></i>
-              <h3> <a href="index.html">Tableau</a></h3>
-            </div>
-  
-            <div class="option2 nav-option">
-              <i class="fa-solid fa-user"></i>
-              <h3> <a href="html/tableau.html">Travailleurs</a></h3>
-            </div>
-  
-            <div class="nav-option option3">
-              <i class="fa-solid fa-signal"></i>
-              <h3> <a href="html/status.html">Status</a></h3>
-            </div>
-  
-            <div class="nav-option option4">
-              <i class="fa-solid fa-list"></i>
-              <h3><a href="html/Bilan.html">Bilan et paiement</a></h3>
-            </div>
-  
-            <div class="nav-option option6">
-              <i class="fa-solid fa-gear"></i>
-              <h3> <a href="html/parametre.html">Paramètres</a></h3>
-            </div>
-  
-            <div class="nav-option logout">
-              <i class="fas fa-sign-out-alt"></i>
-              <h3><a href="html/login.html">Deconnexion</a></h3>
-            </div>
-
-      </div>
-        </nav>
-      </div>
-      
-      <div class="main">
-  
-        <div class="cherchebar2">
-          <input type="text"
-            name=""
-            id=""
-            placeholder="cherche">
-          <div class="cherchebtn">
-          <img src=
-  "https://media.geeksforgeeks.org/wp-content/uploads/20221210180758/Untitled-design-(28).png"
-              class="icn srchicn"
-              alt="cherche-button">
-          </div>
-        </div>
-  
-        <div class="box-container">
-  
-          <div class="box box1">
-            <div class="text">
-              <h2 class="topic">Travailleurs</h2>
-              <h2 class="topic-heading">20</h2>
-            </div>
-  
-          
-          </div>
-  
-          <div class="box box2">
-            <div class="text">
-              <h2 class="topic">Nos Taches</h2>
-              <h2 class="topic-heading">10</h2>
-            </div>
-  
-        
-          </div>
-  
-          <div class="box box3">
-            <div class="text">
-              <h2 class="topic">Soldes</h2>
-              <h2 class="topic-heading">5 MIllion</h2>
-            </div>
-  
-          </div>
-  
-          <div class="box box4">
-            <div class="text">
-              <h2 class="topic">Bilan De Paiement </h2>
-              <h2 class="topic-heading">350 000f</h2>
-            </div>
-  
-           
-        </div>
-  
-        <div class="report-container">
-          <div class="report-header">
-            <h1 class="recent-Articles">Status</h1>
-            <button class="view">Voir Tous</button>
-          </div>
-  
-          <div class="report-body">
-            <div class="report-topic-heading">
-              <h3 class="top">Nom Complet</h3>
-              <h3 class="top">Taches En cours</h3>
+                          <h4>Email</h4>
+                          <div class="username-input">
+                            <i class="fas fa-user"></i>
+                            <input type="email" placeholder="couda.dm@gmail.com" id="email">
+                          </div>
+                          <h4>Mot de Passe</h4>
+                          <div class="password-input">
+                            <i class="fas fa-lock"></i>
+                            <input type="password" id="password" placeholder="***********" >
+                          </div>
+                        
+                    </div>
+                    <button class="login-btn">Se Connecter</button>
+                    <div class="alternative-signup">
+                     
+                    </div>
+              </div>
               
-              <h3 class="top">Status</h3>
-            </div>
-  
-            <div class="items">
-              <div class="item1">
-                <h3 class="top-nextlvl">Diara Madou</h3>
-                <h3 class="top-nextlvl">Chauffeur Camion</h3>
-               
-                <h3 class="top-nextlvl label-tag">En cours</h3>
-              </div>
-  
-              <div class="item1">
-                <h3 class="top-nextlvl">Franck Olivier</h3>
-                <h3 class="top-nextlvl">Chauffeur Camion</h3>
-               
-                <h3 class="top-nextlvl label-tag">EN cours</h3>
-              </div>
-  
-              <div class="item1">
-                <h3 class="top-nextlvl">Kambou Moussa</h3>
-                <h3 class="top-nextlvl">Dechargeur</h3>
-               
-                <h3 class="top-nextlvl label-tag">EN cours</h3>
-              </div>
-  
-              <div class="item1">
-                <h3 class="top-nextlvl">Rigobert Richard</h3>
-                <h3 class="top-nextlvl">Dechargeur</h3>
-             
-                <h3 class="top-nextlvl label-tag">EN cours</h3>
-              </div>
-  
-              <div class="item1">
-                <h3 class="top-nextlvl">Tanti Adja</h3>
-                <h3 class="top-nextlvl">Ramassage de sac</h3>
-                <h3 class="top-nextlvl label-tag">EN cours</h3>
-              </div>
-  
-              <div class="item1">
-                <h3 class="top-nextlvl">Madame TOure</h3>
-                <h3 class="top-nextlvl">Ramassage de sac</h3>
-                
-                <h3 class="top-nextlvl label-tag">EN cours</h3>
-              </div>
-  
-              <div class="item1">
-                <h3 class="top-nextlvl">Kone Karim</h3>
-                <h3 class="top-nextlvl">Broyeur</h3>
-               
-                <h3 class="top-nextlvl label-tag">EN cours</h3>
-              </div>
-  
-              <div class="item1">
-                <h3 class="top-nextlvl">Kouassi Konan</h3>
-                <h3 class="top-nextlvl">Broyeur</h3>
-              
-                <h3 class="top-nextlvl label-tag">EN cours</h3>
-              </div>
-  
-            
-            </div>
-          </div>
-        </div>
-        <div class="report-container">
-          <div class="report-header">
-            <h1 class="recent-Articles">Bilan Mensuel</h1>
-            <button class="view">Voir Tous</button>
-          </div>
-  
-          <div class="report-body">
-            <div class="report-topic-heading">
-              <h3 class="top">Nom Complet</h3>
-              
-              
-              <h3 class="top">Gain Mensuel</h3>
-            </div>
-  
-            <div class="items">
-              <div class="item1">
-                <h3 class="top-nextlvl">Diara Madou</h3>
-                <h3 class="top-nextlvl">30 000F</h3>
-               
-              
-              </div>
-  
-              <div class="item1">
-                <h3 class="top-nextlvl">KOnan Balo</h3>
-                <h3 class="top-nextlvl">60 000F</h3>
-              </div>
-  
-              <div class="item1">
-                <h3 class="top-nextlvl">Diara Siaka</h3>
-                <h3 class="top-nextlvl">23 000F</h3>
-               
-              
-              </div>
-  
-              <div class="item1">
-                <h3 class="top-nextlvl">Diom Niang</h3>
-                <h3 class="top-nextlvl">23 000F</h3>
-             
-              
-              </div>
-  
-              <div class="item1">
-                <h3 class="top-nextlvl">Demo 23</h3>
-                <h3 class="top-nextlvl">23 000F</h3>
-                
-              
-              </div>
-  
-              <div class="item1">
-                <h3 class="top-nextlvl">Couda Dm</h3>
-                <h3 class="top-nextlvl">23 000F</h3>
-                
-              
-              </div>
-  
-              <div class="item1">
-                <h3 class="top-nextlvl">Konan Berte</h3>
-                <h3 class="top-nextlvl">23 000F</h3>
-               
-              
-              </div>
-  
-          
-  
-            </div>
-          </div>
-        </div>
-      </div>
+        </form>
     </div>
-  
-   
-  
-
-
-    <script src="js/script.js"></script>
-</body>
+<!--  -->
+    <script src="/js/script.js"></script>
+  </body>
 </html>
+

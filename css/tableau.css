@@ -431,13 +431,6 @@
       width: 180px;
     }
     }
-    .container {
-      /* width: 960px;
-      padding-right: 15px;
-      padding-left: 15px;
-      margin-right: auto;
-      margin-left: auto; */
-    }
     
     .count {
       color: #04aa6d;
@@ -519,30 +512,6 @@ table{
   }
   }
   
-    /* .table {
-      border-collapse: collapse;
-      width: 100%;
-    }
-    
-    .table td,
-    .table th {
-      border: 1px solid #ddd;
-      padding: 8px;
-    }
-    
-    .table tr:hover {
-      background-color: #ddd;
-    }
-    
-    .table th {
-      padding-top: 12px;
-      padding-bottom: 12px;
-      text-align: left;
-      background-color: #B5B5C3;
-      color: white;
-      text-align: start;
-      
-    } */
     
     .delete-btn {
       background-color: red;
