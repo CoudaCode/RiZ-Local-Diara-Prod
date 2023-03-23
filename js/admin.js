@@ -27,7 +27,7 @@ nameAdmin.textContent = session.name
 
   logout = document.querySelector('.logout a')
 
-  console.log(nameAdmin);
+  console.log(nameAdmin, logout);
   
   logout.addEventListener('click', ()=>{
         localStorage.removeItem('SessionConnect')

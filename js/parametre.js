@@ -242,7 +242,7 @@ setCount(todolist.length)
 nameAdmin = document.querySelector('.adminUser h3');
 session = JSON.parse(localStorage.getItem('SessionConnect'))
 
-nameAdmin.textContent = session.Name
+nameAdmin.textContent = session.name
 
 
 logout = document.querySelector('.logout a')

@@ -102,7 +102,7 @@ nameAdmin = document.querySelector('.adminUser h3');
 DemoAdmin = document.querySelector('.adminUser h4');
 session = JSON.parse(localStorage.getItem('SessionConnect'))
 
-nameAdmin.textContent = session.Name
+nameAdmin.textContent = session.name
 Adp = document.querySelector('.dp h1')
 Adp.textContent = session.name[0].toUpperCase()
 

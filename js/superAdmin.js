@@ -162,8 +162,17 @@ addContactButton.onclick = function (event) {
   deleteButton.setAttribute('contactPhone', password)
   deleteButton.appendChild(buttonText)
 
+  // Modifier
+  let UpdateCell = document.createElement('td')
+  let UpdateButton = document.createElement('button')
+  let UpdateText = document.createTextNode('Modifer')
+  UpdateButton.setAttribute('class', 'modif-btn')
+  UpdateButton.setAttribute('password', password)
+  UpdateButton.appendChild(UpdateText)
+  console.log(deleteButton)
+  console.log(UpdateButton)
   // ajouter un evenment
-  deleteButton.addEventListener('click', function () {
+  deleteButton.addEventListener('click', function(){
     const password = this.getAttribute('contactPhone')
 
     let row = document.getElementById(password)
@@ -179,21 +188,24 @@ addContactButton.onclick = function (event) {
     setAdmin(Admin)
   })
 
-  buttonCell.appendChild(deleteButton)
+ 
 
+  buttonCell.appendChild(deleteButton)
+  UpdateCell.appendChild(UpdateButton)
   row.appendChild(buttonCell)
+  row.appendChild(UpdateCell)
 
   row.setAttribute('id', password)
   tblBody.appendChild(row)
   table.appendChild(tblBody)
-
-
+  
+  
   // vider les inputs
   document.getElementById('name').value = ''
   document.getElementById('email').value = ''
   document.getElementById('password').value = ''
-  
   modal.style.display = 'none'
+  console.log(UpdateButton)
 }
 
 setCount(Admin.length)
