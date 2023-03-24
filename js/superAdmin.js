@@ -135,8 +135,7 @@ UpdateBtn.forEach(function (btn) {
     let filteredAdmin = Admin.filter(
       (contact) => contact.password === password
     );
-    console.log(Admin)
-    console.log(filteredAdmin);
+    
     console.log(document.getElementById("name").value)
     document.getElementById("name").value = filteredAdmin[0].name
     document.getElementById("email").value = filteredAdmin[0].email
