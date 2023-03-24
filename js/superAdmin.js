@@ -1,9 +1,15 @@
 let modal = document.getElementById("contactModal");
 let modalButton = document.getElementById("addContactModalButton");
+
+let UpBtn = modal.querySelector(".UpdateContactButton");
+console.log(UpBtn)
 let close = document.querySelector(".close");
 
 modalButton.onclick = function () {
   modal.style.display = "block";
+  UpBtn.style.display ='none';
+  addContactButton.style.display ='block'
+
 };
 
 close.onclick = function () {
@@ -96,9 +102,11 @@ function createTable() {
 createTable();
 
 let deleteButton = document.querySelectorAll(".delete-btn");
+UpdateBtn = document.querySelectorAll(".modif-btn");
 
 deleteButton.forEach(function (button) {
   button.addEventListener("click", function () {
+    console.log('Depuis Dom')
     const password = this.getAttribute("contactPhone");
     console.log(password);
 
@@ -116,49 +124,76 @@ deleteButton.forEach(function (button) {
   });
 });
 
-UpdateBtn = document.querySelectorAll(".modif-btn");
-console.log(UpdateBtn);
-
 UpdateBtn.forEach(function (btn) {
   btn.addEventListener("click", function () {
+    UpBtn.style.display ='block';
+    addContactButton.style.display ='none'
+    console.log(UpBtn)
+    
     const password = this.getAttribute("phone");
-    console.log(password);
+   
     let filteredAdmin = Admin.filter(
       (contact) => contact.password === password
     );
     console.log(Admin)
-    console.table(filteredAdmin);
-      
+    console.log(filteredAdmin);
+    console.log(document.getElementById("name").value)
     document.getElementById("name").value = filteredAdmin[0].name
     document.getElementById("email").value = filteredAdmin[0].email
     document.getElementById("password").value = filteredAdmin[0].password
+      
 
-      modal.style.display = "block";
+
+    console.log(addContactButton)
+
+    UpBtn.addEventListener('click',function(){
+      let form = document.querySelector(".form");
+      form.addEventListener("submit", (e)=>{
+        e.preventDefault();
+      })
+     
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      console.log(name)
+      console.log('nam',name, 'email :',email, 'mdp:',password)
+
+    })
+
+    modal.style.display = "block";
    
-    
     close.onclick = function () {
+      
       modal.style.display = "none";
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("password").value = "";
     };
     
     window.onclick = function (event) {
-      if (event.target == modal) {
+      if(event.target == modal) {
         modal.style.display = "none";
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("password").value = "";
       }
     };
 
   });
 });
 
-
-
-
-
-
 // modal
 
 // ajouter un contact
+
 let addContactButton = document.querySelector(".addContactButton");
-addContactButton.onclick = function (event) {
+
+
+  addContactButton.onclick = function (event) {
+    
+
+  
   event.preventDefault();
   const name = document.getElementById("name").value;
   const email = document.getElementById("email").value;
@@ -199,6 +234,7 @@ addContactButton.onclick = function (event) {
   deleteButton.setAttribute("class", "delete-btn");
   deleteButton.setAttribute("contactPhone", password);
   deleteButton.appendChild(buttonText);
+  // Ajouter Evenements
 
   // Modifier
   let UpdateCell = document.createElement("td");
@@ -210,8 +246,64 @@ addContactButton.onclick = function (event) {
   console.log(deleteButton);
   console.log(UpdateButton);
 
+  UpdateButton.addEventListener("click", function () {
+    UpBtn.style.display ='block';
+    addContactButton.style.display ='none'
+    const password = this.getAttribute("phone");
+   
+    let filteredAdmin = Admin.filter(
+      (contact) => contact.password === password
+    );
+    console.log(Admin)
+    console.log(filteredAdmin);
+    console.log(document.getElementById("name").value)
+    document.getElementById("name").value = filteredAdmin[0].name
+    document.getElementById("email").value = filteredAdmin[0].email
+    document.getElementById("password").value = filteredAdmin[0].password
+   
+
+
+
+
+    modal.style.display = "block";
+   
+    close.onclick = function () {
+      modal.style.display = "none";
+      document.getElementById("name").value = "";
+      document.getElementById("email").value = "";
+      document.getElementById("password").value = "";
+    };
+
+    window.onclick = function (event) {
+      if(event.target == modal) {
+        modal.style.display = "none";
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("password").value = "";
+      }
+    };
+  
+  });
+  deleteButton.addEventListener("click", function () {
+        const password = this.getAttribute("contactPhone");
+        console.log(password);
+    
+        let row = document.getElementById(password);
+        console.log(row)
+        row.parentNode.removeChild(row);
+        // enlever l'element supprimer
+        let filteredAdmin = Admin.filter(
+          (contact) => contact.password !== password
+        );
+        console.log(filteredAdmin);
+        Admin = filteredAdmin;
+        setCount(Admin.length);
+        setAdmin(Admin);
+  });
+
   // Ajouter de UpdateButtton et deleteButton a td et Tr
   buttonCell.appendChild(deleteButton);
+  UpdateCell.appendChild(UpdateButton)
   row.appendChild(buttonCell);
   row.appendChild(UpdateButton);
   row.setAttribute("id", password);
@@ -224,6 +316,8 @@ addContactButton.onclick = function (event) {
   document.getElementById("password").value = "";
   modal.style.display = "none";
 };
+
+
 
 setCount(Admin.length);
 
