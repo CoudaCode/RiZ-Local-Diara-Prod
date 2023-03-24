@@ -124,6 +124,11 @@ deleteButton.forEach(function (button) {
   });
 });
 
+
+
+
+
+
 UpdateBtn.forEach(function (btn) {
   btn.addEventListener("click", function () {
     UpBtn.style.display ='block';
