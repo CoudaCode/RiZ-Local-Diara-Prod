@@ -33,7 +33,7 @@ form.addEventListener("submit", (e) => {
   // console.log(addAdmin)
   if (mail.value == superUser.mail && pass.value == superUser.mdp){
    
-    window.location.href = "http://127.0.0.1:5500/html/superAdmin.html";
+    window.location.href = "https://diaramadou.github.io/RiZ-Local-Diara-Prod/html/superAdmin.html";
     localStorage.setItem("SessionConnect", JSON.stringify(superUser));
   }else{
     
@@ -42,7 +42,7 @@ form.addEventListener("submit", (e) => {
     
     if(mail.value == element.email && pass.value == element.password){
       
-      window.location.href = "http://127.0.0.1:5500/html/admin.html";
+      window.location.href = "https://diaramadou.github.io/RiZ-Local-Diara-Prod/html/admin.html";
       
       localStorage.setItem("SessionConnect", JSON.stringify(element));
 
