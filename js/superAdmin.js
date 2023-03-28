@@ -131,60 +131,62 @@ deleteButton.forEach(function (button) {
 
 UpdateBtn.forEach(function (btn){
   btn.addEventListener("click", function (e){
-
+    let form = document.querySelector(".form");
+      e.preventDefault();
     const password = this.getAttribute("phone");
-    // console.log()
-    // console.log
-    // console.log('test',password)
+   
     parent = btn.closest(`#${password}`)
     tds = parent.querySelectorAll('td')
     nom = tds[0].textContent;
     email = tds[1].textContent;
     mdp = tds[2].textContent;
 
-    // console.log(nom, mdp, email)
-    // console.log(parent)
 
     UpBtn.style.display ='block';
     addContactButton.style.display ='none'
-   
-    
+
     document.getElementById("name").value = nom
     document.getElementById("email").value = email
     document.getElementById("password").value = mdp
     
-    // VerifTAb = Admin.filter((pass)=> pass.email === email)
-    // console.log(VerifTAb)
-    
+  
     UpBtn.addEventListener('click',function(e){
-      let form = document.querySelector(".form");
       e.preventDefault();
-      
+      console.log(nom)
       const name = document.getElementById("name").value;
       const email = document.getElementById("email").value;
       const password = document.getElementById("password").value;
 
       console.log('nom :' ,name,'demo :' ,email,'pass :' ,password)
 
+      let modif;
+      let data;
 
-      VerifTAb = Admin.map((pass)=>{
-                let data ;
-                
-
-
+      VerifTAb = Admin.filter((pass)=>{
+                if(pass.email === email){
+                    // modif = pass
+                    // data = {
+                    //     name, email, password
+                    // }
+                    // return data
+                    return pass
+                }
+                // Admin.push(data)
       })
-      // console.log(VerifTAb)
+
+      console.log('test',VerifTAb)
+
+
+      if (VerifTAb.email !== email) {
+          data = {
+              
+          }
+      } else {
+        
+      }
 
 
       
-       // filteredAdmin[0].name = name,
-      // filteredAdmin[0].email = email,
-      // filteredAdmin[0].password = password,
-
-      // console.log('test',filteredAdmin)
-
-      // setAdmin(filteredAdmin)
-
     })
 
     modal.style.display = "block";
@@ -277,6 +279,84 @@ let addContactButton = document.querySelector(".addContactButton");
   UpdateButton.appendChild(UpdateText);
   console.log(deleteButton);
   console.log(UpdateButton);
+
+
+  UpdateButton.addEventListener("click", function (e){
+      let form = document.querySelector(".form");
+      e.preventDefault();
+      const password = this.getAttribute("phone");
+     
+      parent = btn.closest(`#name`)
+      console.log(parent)
+
+      // tds = parent.querySelectorAll('td')
+      // nom = tds[0].textContent;
+      // email = tds[1].textContent;
+      // mdp = tds[2].textContent;
+  
+      // console.log(nom, mdp, email)
+      // console.log(parent)
+  
+      UpBtn.style.display ='block';
+      addContactButton.style.display ='none'
+     
+      
+      document.getElementById("name").value = nom
+      document.getElementById("email").value = email
+      document.getElementById("password").value = mdp
+      
+      // VerifTAb = Admin.filter((pass)=> pass.email === email)
+      // console.log(VerifTAb)
+      
+      UpBtn.addEventListener('click',function(e){
+        e.preventDefault();
+        console.log(nom)
+        const name = document.getElementById("name").value;
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
+  
+        console.log('nom :' ,name,'demo :' ,email,'pass :' ,password)
+  
+        // VerifTAb = Admin.filter((pass)=>{
+        //   let modif;
+        //   let data;
+        //           if(pass.email === email){
+        //               modif = pass
+        //              data = {
+        //                   name, email, password
+        //               }
+  
+        //               return data
+        //           }
+  
+        //           Admin.push(data)
+        // })
+  
+        console.log('test',VerifTAb)
+        
+      })
+  
+      modal.style.display = "block";
+     
+      close.onclick = function () {
+        modal.style.display = "none";
+        document.getElementById("name").value = "";
+        document.getElementById("email").value = "";
+        document.getElementById("password").value = "";
+      };
+      
+      window.onclick = function (event) {
+        if(event.target == modal) {
+          modal.style.display = "none";
+          document.getElementById("name").value = "";
+          document.getElementById("email").value = "";
+          document.getElementById("password").value = "";
+        }
+      };
+  
+    });
+
+
 
   // UpdateButton.addEventListener("click", function () {
   //   UpBtn.style.display ='block';
