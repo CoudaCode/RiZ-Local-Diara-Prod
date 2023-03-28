@@ -162,7 +162,7 @@ UpdateBtn.forEach(function (btn){
       let modif;
       let data;
 
-      VerifTAb = Admin.filter((pass)=>{
+      VerifTAb = Admin.map((pass)=>{
                 if(pass.email === email){
                     // modif = pass
                     // data = {
@@ -179,14 +179,17 @@ UpdateBtn.forEach(function (btn){
 
       if (VerifTAb.email !== email) {
           data = {
-              
+              name, email,password  
           }
-      } else {
-        
+
+
+          VerifTAb = data
+
+          initialAdmin.push(VerifTAb)
+          setAdmin(initialAdmin);
+          console.log('ok')
       }
 
-
-      
     })
 
     modal.style.display = "block";
@@ -286,13 +289,15 @@ let addContactButton = document.querySelector(".addContactButton");
       e.preventDefault();
       const password = this.getAttribute("phone");
      
-      parent = btn.closest(`#name`)
-      console.log(parent)
+      parent = UpdateButton.closest(`#name`)
 
-      // tds = parent.querySelectorAll('td')
-      // nom = tds[0].textContent;
-      // email = tds[1].textContent;
-      // mdp = tds[2].textContent;
+      console.log(parent)
+    
+
+      tds = parent.querySelectorAll('td')
+      nom = tds[0].textContent;
+      email = tds[1].textContent;
+      mdp = tds[2].textContent;
   
       // console.log(nom, mdp, email)
       // console.log(parent)
