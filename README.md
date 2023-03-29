@@ -2,4 +2,4 @@
 Creation de page admin 
 
 
-link : 
+link : https://diaramadou.github.io/RiZ-Local-Diara-Prod/
