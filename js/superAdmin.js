@@ -115,6 +115,7 @@ Admin.forEach(adm => {
           <td>${adm.email}</td>
           <td>${adm.password}</td>
           <td><button class="delete-btn" contactphone="${adm.email}">Supprimer</button></td>
+          <td><button class="modif-btn" contactphone="${adm.email}">Modier</button></td>
           
           </tr>`
   tblBody.innerHTML += row
@@ -183,17 +184,18 @@ UpdateBtn.forEach(function (btn){
         </div>
           <div>
             <label for="name">Nom complet:</label>
-            <input class="form-control" required type="text" value="${conpare.name}" id="name" name="name">
+            <input class="form-control"  required type="text" value="${conpare.name}" id="name" name="name">
             </div>
             </div>
-          <div class="champ"> 
+          <div class="champ">
                 <div>
                   <label for="telephone">Mot de passe:</label>
                   <input class="form-control" required type="password" value="${conpare.password}" id="password" name="password">
                 </div>
           </div>
-            <button type="submit" class="UpdateContactButton">Modif</button>
+            <button type="button" id="${conpare.email}" class="UpdateContactButton">Modif</button>
       `
+      form.innerHTML = contenu
       // form
       // .querySelector(".UpdateContactButton")
       // .addEventListener("click", () => {
@@ -206,14 +208,45 @@ UpdateBtn.forEach(function (btn){
       //   window.location.reload()
       // });
       form.querySelector('.UpdateContactButton').addEventListener('click',function(e){
+        e.preventDefault()
         let inputs = form.querySelectorAll("input");
-          inputs.forEach(function (input) {
-            // concerne[conpare.id] = input.value;
-            console.log(input)
-          });
+          // inputs.forEach(function (input){
+
+              
+
+          //     console.log('test',e.target.id)
+          //       // concerne[conpare.id] = input.value;
+            
+          // });
+
+          const email = inputs[0]
+          const name = inputs[1]
+          const mdp = inputs[2]
+
+
+          // const NewObj = {
+          //     email : email.value, name: name.value,mdp:mdp.value
+          // }
+          const inde = data.find(cle => cle.email == e.target.id)
+          const indeix = data.indexOf(inde)
+
+          console.log(indeix)
+          console.log(inde)
+
+          
+          inde.name = name.value;
+          inde.password = mdp.value;
+
+          data[indeix] = inde
+
+
+
+          
+        setAdmin(data)
+        window.location.reload()
       })
-        console.log(form.querySelector('.UpdateContactButton'))
-        form.innerHTML = contenu
+        console.log('TEST',form.querySelector('.UpdateContactButton'))
+        // form.innerHTML = contenu
 
         modal.style.display = "block";
       
