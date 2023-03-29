@@ -6,56 +6,42 @@ function getContacts() {
   return JSON.parse(localStorage.getItem("travailleurs"));
 }
 
+
+function getBilan(){
+    return JSON.parse(localStorage.getItem("bilan"));
+}
+
+function setBilan(){
+  return JSON.stringify(localStorage.setItem("bilan"));
+}
+
+
+
+let bilan = getBilan() || []
+
 // function setContacts(contacts) {
 //   localStorage.setItem('contacts', JSON.stringify(contacts))
 // }
 
 // setContacts(initialContacts)
 let contacts = getContacts();
+contacts.forEach(elem => {
+        conten = `
+        <tr id="${elem.email}">
+            <td>${elem.name}</td>
+            <td>${elem.telephone}</td>
+            <td>${elem.Date}</td>
+            <td>${elem.time}</td>
+            <td>${elem.time}</td>
+            <td>${elem.gain}</td>
+            <td><button class="delete-btn" contactphone="1234">terminer</button></td>
+        </tr>  
+        `
 
-function createTable() {
-  for (let index = 0; index < contacts.length; index++) {
-    let row = document.createElement("tr");
-    // creer le button de supression
-    let buttonCell = document.createElement("td");
-    let deleteButton = document.createElement("button");
-    let buttonText = document.createTextNode("terminer");
-    deleteButton.setAttribute("class", "delete-btn");
-    deleteButton.appendChild(buttonText);
+        tbody.innerHTML += conten
 
-    for (
-      let element = 0;
-      element < Object.keys(contacts[0]).length;
-      element++
-    ) {
-      if (element == 1 || element == 3) {
-        continue;
-      }
-
-      // ajouter les td
-      const cell = document.createElement("td");
-
-      const cellText = document.createTextNode( Object.values(contacts[index])[element]
-      );
-      console.log(cellText);
-      console.log(cell);
-      deleteButton.setAttribute("contactPhone", contacts[index].telephone);
-      deleteButton.setAttribute("contactPhone", contacts[index].telephone);
-      buttonCell.appendChild(deleteButton);
-      cell.appendChild(cellText);
-      row.appendChild(cell);
-      row.appendChild(buttonCell);
-      row.setAttribute("id", contacts[index].telephone);
-
-      // console.log( Object.keys(contacts[0]));
-    }
-    tbody.appendChild(row);
-  }
-  table.appendChild(tbody);
-}
-
-createTable();
-
+        table.appendChild(tbody)
+});
 let menuicn = document.querySelector(".menuicn");
 let nav = document.querySelector(".navcontainer");
 
@@ -66,32 +52,36 @@ menuicn.addEventListener("click", () => {
 // Click pour supprimer un utilistateur
 
 deletetbn = document.querySelectorAll(".delete-btn");
-// function myFunction() {
-//   location.href = "https://diaramadou.github.io/RiZ-Local-Diara-Prod/html/Bilan.html";
 
-// }
 
 console.log(contacts)
 deletetbn.forEach((elem) => {
-  elem.addEventListener("click", () => {
-  
-    // if (elem.textContent !== 'terminer') {
-    //   elem.removeAttribute("class");
-    //   elem.textContent = "terminer";
-    //   elem.setAttribute("class", "terminer-btn");
-    //   // console.log(elem.contactPhone)
-    //   console.log(elem.getAttribute("contactPhone"))
-    // }else{
-    //   myFunction()
-    // }           
-    // console.log("test");
+  elem.addEventListener("click", (e) => {
 
-    // // myFunction() 
 
-        let contactPhone = elem.getAttribute("contactPhone");
-        console.log(contactPhone);
-        veriF = contacts.filter( id =>id.telephone === contactPhone )
+        parentButom = e.target.closest("tr");
+        console.log(parentButom)
+        veriF = contacts.filter( id =>id.email === parentButom.id )
         console.log(veriF);
+
+          let dat = new Date        
+
+          console.log(dat.toDateString())
+        // Bilan = contacts.map(function(id) {
+        //         let data = null;
+
+        //         if (id.email !== parentButom.id) {
+        //               data = id;
+        //         }
+
+        //         return data
+        // } )
+        console.log(Bilan);
+
+
+
+
+
   });
 });
 
