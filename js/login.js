@@ -35,8 +35,6 @@ form.addEventListener("submit", (e) => {
    
     window.location.href = "https://diaramadou.github.io/RiZ-Local-Diara-Prod/html/superAdmin.html";
     localStorage.setItem("SessionConnect", JSON.stringify(superUser));
-  }else{
-    
   } 
   addAdmin.forEach(element => {
     

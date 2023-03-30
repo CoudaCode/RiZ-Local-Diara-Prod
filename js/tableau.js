@@ -23,36 +23,18 @@ let menuicn = document.querySelector(".menuicn");
 }
 
 
-// const opt1 = document.createElement("option");
-
-// opt1.value = "3";
-
-// opt1.textContent = "Changeur";
-
-
-// console.log()
-
-
 
 console.log(Object.values(getTodolist()[0]))
 
 for (let tab = 0; tab < getTodolist().length; tab++) {
   
   for (let tel = 0; tel < Object.keys(getTodolist()[tab]).length - 1 ; tel++) {
-    // const optMontant = document.getElementById("Gain");
+   
     const optTAche = document.createElement("option");
-    optTAche.value = tel+1;
-    // optMontant.value = Object.values(getTodolist()[tab])[1];
-    // console.log(optMontant.value)
-    // console.log(optMontant);
+   
     optTAche.textContent = Object.values(getTodolist()[tab])[0];  
     
     document.getElementById('Tache').add(optTAche)
-    
-    // optMontant.textContent = Object.values(getTodolist()[tab])[1];  
-    // console.log(opt)
-    // console.log('test',Object.values(getTodolist()[2])[1])
-    // document.getElementById('Gain').add(optMontant)
     
     console.log(optTAche.value)
   }
@@ -67,7 +49,7 @@ changeTAche = document.getElementById('Tache')
 let TabMtn = []
 
 
-for (let alt = 0; alt < getTodolist().length; alt++) {
+for (let alt = 0; alt < getTodolist().length; alt++){
   
   for (let tel = 0; tel < Object.keys(getTodolist()[alt]).length - 1 ; tel++) {
     TabMtn.push(parseInt(Object.values(getTodolist()[alt])[1]))
