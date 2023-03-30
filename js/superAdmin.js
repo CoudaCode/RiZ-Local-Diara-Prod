@@ -210,23 +210,13 @@ UpdateBtn.forEach(function (btn){
       form.querySelector('.UpdateContactButton').addEventListener('click',function(e){
         e.preventDefault()
         let inputs = form.querySelectorAll("input");
-          // inputs.forEach(function (input){
-
-              
-
-          //     console.log('test',e.target.id)
-          //       // concerne[conpare.id] = input.value;
-            
-          // });
-
+         
           const email = inputs[0]
           const name = inputs[1]
           const mdp = inputs[2]
 
 
-          // const NewObj = {
-          //     email : email.value, name: name.value,mdp:mdp.value
-          // }
+          
           const inde = data.find(cle => cle.email == e.target.id)
           const indeix = data.indexOf(inde)
 
