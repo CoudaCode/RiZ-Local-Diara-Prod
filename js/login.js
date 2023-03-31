@@ -29,8 +29,7 @@ console.log(addAdmin)
 form.addEventListener("submit", (e) => {
   e.preventDefault();
 
-  // console.log(mail.value)
-  // console.log(addAdmin)
+
   if (mail.value == superUser.mail && pass.value == superUser.mdp){
    
     window.location.href = "https://diaramadou.github.io/RiZ-Local-Diara-Prod/html/superAdmin.html";

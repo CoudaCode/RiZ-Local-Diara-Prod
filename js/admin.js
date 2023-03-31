@@ -26,6 +26,7 @@ let travailleurs = getContacts()
   prent1 = document.querySelector('.report-body1')
   prent2 = document.querySelector('.report-body2')
   travailleurs.forEach(element =>{
+    
     contenu1 = ` <div class="item1">
         <h3 class="top-nextlvl">${element.name}</h3>
         <h3 class="top-nextlvl">${element.Tache}</h3>
@@ -54,7 +55,7 @@ let travailleurs = getContacts()
 
 nameAdmin = document.querySelector('.adminUser h3');
 session = JSON.parse(localStorage.getItem('SessionConnect'))
-
+// Deconnexion 
 nameAdmin.textContent = session.name
 
   logout = document.querySelector('.logout a')
