@@ -21,10 +21,6 @@ bilan.forEach(lem => {
       table.appendChild(tbody)
 });
 
-
-
-
-
 nameAdmin = document.querySelector('.adminUser h3');
 session = JSON.parse(localStorage.getItem('SessionConnect'))
 
