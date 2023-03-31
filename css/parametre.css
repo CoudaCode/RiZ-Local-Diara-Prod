@@ -11,7 +11,7 @@
   --background-color3: #ededed;
   --background-color4: #cad7fda4;
   --primary-color: #4b49ac;
-  --secondary-color: #0c007d;
+  --secondary-color: #0c007d; 
   --Border-color: #5F8D4E;
   --one-use-color: #3BB001;
   --two-use-color: #008000;
@@ -519,32 +519,7 @@ table{
     
   }
   }
-/*     
-    .table {
-      border-collapse: collapse;
-      width: 100%;
-    }
-    
-    .table td,
-    .table th {
-      border: 1px solid #ddd;
-      padding: 8px;
-    }
-    
-    .table tr:hover {
-      background-color: #ddd;
-    }
-    
-    .table th {
-      padding-top: 12px;
-      padding-bottom: 12px;
-      text-align: left;
-      background-color: #B5B5C3;
-      color: white;
-      text-align: start;
-      
-    } */
-    
+
     .delete-btn {
       background-color: red;
       color: white;

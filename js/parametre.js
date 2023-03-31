@@ -1,12 +1,4 @@
-// 
-//ajout de nouvelle options
 
-// const opt1 = document.createElement("option");
-// opt1.value = "3";
-// opt1.textContent = "Changeur";
-
-
-// console.log(document.getElementById('tache').add(opt1))
 
 let menuicn = document.querySelector(".menuicn");
   let nav = document.querySelector(".navcontainer");
@@ -29,9 +21,7 @@ let initialContacts = getContacts() || []
 const countElement = document.querySelector('.count')
 const table = document.querySelector('.table')
 const tblBody = document.createElement('tbody')
-// console.log(initialContacts)
 
-// function counter
 function setCount(count) {
   countElement.innerHTML = count
 }
@@ -98,6 +88,8 @@ deleteButton.forEach(function (button) {
       (contact) => contact.taches !== taches
     )
     todolist = filteredContacts
+
+    console.log(todolist)
     setCount(todolist.length)
     settodolist(todolist)
   })
@@ -128,13 +120,6 @@ addContactButton.onclick = function (event) {
   event.preventDefault()
   const taches = document.getElementById('tache').value
   const Montant = document.getElementById('Montant').value
-  // const email = document.getElementById('email').value
-  // const telephone = document.getElementById('telephone').value
-  // const Sexe = document.getElementById('Sexe').options[document.getElementById('Sexe').selectedIndex].innerText;
-  // const Date = document.getElementById('date').value
-  // const time = document.getElementById('temps').value
-  // const Tache = document.getElementById('tache').options[document.getElementById('tache').selectedIndex].innerText
-  // const gain = document.getElementById('gain').options[document.getElementById('gain').selectedIndex].innerText
   
   if (!taches ){
     alert('merci de tout remplir')
@@ -159,37 +144,6 @@ addContactButton.onclick = function (event) {
     cell1.appendChild(cell1Text)
     row.appendChild(cell1)
 
-  // let cell2 = row.insertCell(2)
-  // const cell2Text = document.createTextNode(telephone)
-  // cell2.appendChild(cell2Text)
-  // row.appendChild(cell2)
-
-  // let cell3 = row.insertCell(3)
-  // const cell3Text = document.createTextNode(Sexe)
-  // cell3.appendChild(cell3Text)
-  // row.appendChild(cell3)
-
-  // let cell4 = row.insertCell(4)
-  // const cell4Text = document.createTextNode(Date)
-  // cell4.appendChild(cell4Text)
-  // row.appendChild(cell4)
-
-  // let cell5 = row.insertCell(5)
-  // const cell5Text = document.createTextNode(time)
-  // cell5.appendChild(cell5Text)
-  // row.appendChild(cell5)
-
-  // let cell6 = row.insertCell(6)
-  // const cell6Text = document.createTextNode(Tache)
-  // cell6.appendChild(cell6Text)
-  // row.appendChild(cell6)
-  
-
-  // let cell7 = row.insertCell(7)
-  // const cell7Text = document.createTextNode(gain)
-  // cell7.appendChild(cell7Text)
-  // row.appendChild(cell7)
-  
   // creer le button de supression
   let buttonCell = document.createElement('td')
   let deleteButton = document.createElement('button')
@@ -227,12 +181,7 @@ addContactButton.onclick = function (event) {
   // vider les inputs
   document.getElementById('tache').value = ''
   document.getElementById('Montant').value = ''
-  // document.getElementById('telephone').value = ''
-  // document.getElementById('Sexe').value = ''
-  // document.getElementById('date').value = ''
-  // document.getElementById('tache').value = ''
-  // document.getElementById('gain').value = ''
-  // document.getElementById('temps').value = ''
+ 
   modal.style.display = 'none'
 }
 

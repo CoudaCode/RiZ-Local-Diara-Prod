@@ -1,32 +1,30 @@
 tbody = document.createElement("tbody");
 table = document.querySelector(".table");
-let initialContacts = getContacts() || [];
 
-function getContacts() {
+function getTravailleurs() {
   return JSON.parse(localStorage.getItem("travailleurs"));
 }
 
-
-function getBilan(){
-    return JSON.parse(localStorage.getItem("bilan"));
+function setTravailleurs(travailleurs) {
+  return localStorage.setItem("travailleurs", JSON.stringify(travailleurs));
 }
 
-function setBilan(){
-  return JSON.stringify(localStorage.setItem("bilan"));
+function getBilan() {
+  return JSON.parse(localStorage.getItem("bilan"));
 }
 
+function setBilan(bilan) {
+  return localStorage.setItem("bilan", JSON.stringify(bilan));
+}
 
+let bilan = getBilan() || [];
 
-let bilan = getBilan() || []
+console.log("test", bilan);
+let travailleurs = getTravailleurs();
 
-// function setContacts(contacts) {
-//   localStorage.setItem('contacts', JSON.stringify(contacts))
-// }
-
-// setContacts(initialContacts)
-let contacts = getContacts();
-contacts.forEach(elem => {
-        conten = `
+console;
+travailleurs.forEach((elem) => {
+  conten = `
         <tr id="${elem.email}">
             <td>${elem.name}</td>
             <td>${elem.telephone}</td>
@@ -34,13 +32,13 @@ contacts.forEach(elem => {
             <td>${elem.time}</td>
             <td>${elem.time}</td>
             <td>${elem.gain}</td>
-            <td><button class="delete-btn" contactphone="1234">terminer</button></td>
+            <td><button class="delete-btn" contactphone="${elem.email}">terminer</button></td>
         </tr>  
-        `
+        `;
 
-        tbody.innerHTML += conten
+  tbody.innerHTML += conten;
 
-        table.appendChild(tbody)
+  table.appendChild(tbody);
 });
 let menuicn = document.querySelector(".menuicn");
 let nav = document.querySelector(".navcontainer");
@@ -53,54 +51,47 @@ menuicn.addEventListener("click", () => {
 
 deletetbn = document.querySelectorAll(".delete-btn");
 
-
-console.log(contacts)
 deletetbn.forEach((elem) => {
   elem.addEventListener("click", (e) => {
+    parentButom = e.target.closest("tr");
+
+    tbody.removeChild(parentButom);
+    // console.log(parentButom);
+    veriF = travailleurs.filter((id) => id.email === parentButom.id);
+    reste = travailleurs.filter((id) => id.email !== parentButom.id);
+
+    // console.log(veriF);
+    console.log(bilan);
+    let dat = new Date();
+    
+      newinfo = {
+      
+      name: veriF[0].name,
+      gain: veriF[0].gain,
+      Tache: veriF[0].Tache,
+      telephone: veriF[0].telephone,
+      DateDefin: dat.toDateString(),
+      
+    };
+    bilan.push(newinfo);
+    setBilan(bilan);   
 
 
-        parentButom = e.target.closest("tr");
-        console.log(parentButom)
-        veriF = contacts.filter( id =>id.email === parentButom.id )
-        console.log(veriF);
-
-          let dat = new Date        
-
-          console.log(dat.toDateString())
-        // Bilan = contacts.map(function(id) {
-        //         let data = null;
-
-        //         if (id.email !== parentButom.id) {
-        //               data = id;
-        //         }
-
-        //         return data
-        // } )
-        console.log(Bilan);
-
-
-
-
-
+    setTravailleurs(reste);
   });
 });
 
+nameAdmin = document.querySelector(".adminUser h3");
+DemoAdmin = document.querySelector(".adminUser h4");
+session = JSON.parse(localStorage.getItem("SessionConnect"));
 
+nameAdmin.textContent = session.name;
+Adp = document.querySelector(".dp h1");
+Adp.textContent = session.name[0].toUpperCase();
 
+logout = document.querySelector(".logout a");
 
-nameAdmin = document.querySelector('.adminUser h3');
-DemoAdmin = document.querySelector('.adminUser h4');
-session = JSON.parse(localStorage.getItem('SessionConnect'))
-
-nameAdmin.textContent = session.name
-Adp = document.querySelector('.dp h1')
-Adp.textContent = session.name[0].toUpperCase()
-
-logout = document.querySelector('.logout a')
-
-console.log(logout);
-
-logout.addEventListener('click', ()=>{
-      localStorage.removeItem('SessionConnect')
-      console.log("c'est clear")
-})
+logout.addEventListener("click", () => {
+  localStorage.removeItem("SessionConnect");
+  console.log("c'est clear");
+});
