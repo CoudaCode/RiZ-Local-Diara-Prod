@@ -32,14 +32,14 @@ form.addEventListener("submit", (e) => {
 
   if (mail.value == superUser.mail && pass.value == superUser.mdp){
    
-    window.location.href = "https://diaramadou.github.io/RiZ-Local-Diara-Prod/html/superAdmin.html";
+    window.location.href = "https://coudacode.github.io/RiZ-Local-Diara-Prod/html/superAdmin.html";
     localStorage.setItem("SessionConnect", JSON.stringify(superUser));
   } 
   addAdmin.forEach(element => {
     
     if(mail.value == element.email && pass.value == element.password){
       
-      window.location.href = "https://diaramadou.github.io/RiZ-Local-Diara-Prod/html/admin.html";
+      window.location.href = "https://coudacode.github.io/RiZ-Local-Diara-Prod/html/admin.html";
       
       localStorage.setItem("SessionConnect", JSON.stringify(element));
 
